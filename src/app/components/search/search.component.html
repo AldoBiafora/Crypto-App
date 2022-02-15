@@ -1,0 +1,29 @@
+<h2 *ngIf="loading">LOADING...</h2>
+    <div class="col-12">
+        <div class="container text-center my-5">
+            <label for="search-box" class="m-4 fw-bold fs-3"> <h2>Cerca Crypto per Nome</h2> </label>
+            <input type="text" class="form-control w-75 mx-auto" #searchBox id="searchBox" >
+            <button class="btn btn-success my-3" (click)="getCryptoById(searchBox.value)">Cerca</button>
+            <ul *ngIf="cryptoId !=null" class="list-group my-3">
+                <li class="list-group-item">
+                    <p class="lead">
+                        Name: <span class="fw-bold">{{cryptoId.name}}</span>
+                        <br>
+                    </p>
+                    <p class="lead">
+                        Simbolo:  <span class="fw-bold">{{cryptoId.symbol}}</span>
+                        <br>
+                    </p>
+                    <p class="lead">
+                         Rank Market Cap: <span class="fw-bold"> {{cryptoId.market_cap_rank}}</span>
+                        <br>
+                    </p>
+                        <p class="lead">
+                        Prezzo Attuale: <span class="fw-bold">{{cryptoId.market_data.current_price.usd | currency}}</span>
+                        <br>
+                    </p>
+                    <p class="text-center">{{cryptoId.description.en}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>

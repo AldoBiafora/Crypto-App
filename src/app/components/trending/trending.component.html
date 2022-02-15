@@ -1,0 +1,16 @@
+<h2 *ngIf="loading">LOADING...</h2>
+<div class="container text-center my-5">
+    <div class="row">
+        <div class="col-12">
+            <h2>Top 7 Crypto in Tendenza</h2>
+            <ul class="list-group my-3">
+                <li *ngFor="let cry of crypto" class="list-group-item">
+                    <p *ngFor="let coin of cry.coins.item | keyvalue">
+                        {{coin}}
+                    </p>
+                    <!-- <p>Name: <span class="fw-bold">{{c.coins['item'].name}}</span></p>-->
+                 </li>
+            </ul>
+        </div>
+    </div>
+</div>

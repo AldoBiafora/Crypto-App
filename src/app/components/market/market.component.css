@@ -1,0 +1,7 @@
+.card-custom {
+    border: 1px solid #6441a5;
+    border-radius: 20px;
+    height: 500px;
+    width: 400px;
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}

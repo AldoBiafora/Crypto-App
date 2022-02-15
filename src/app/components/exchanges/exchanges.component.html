@@ -1,0 +1,30 @@
+<h2 class="text-center my-5">Tutti Gli Exchanges</h2>
+<h2 *ngIf="loading">LOADING...</h2>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div *ngFor="let e of exchange" class="card-custom col-12 text-center m-2 w-75">
+            <img class="img-fluid w-25 p-2" src="{{e.image}}" alt="">
+            <h2>{{e.name}}</h2>
+            <h3>
+                <span class="fw-bold">Anno di Nascita:</span> 
+                <br>  
+                {{e.year_established}}
+            </h3>
+            <h3>
+                <span class="fw-bold">Regione:</span>  
+                {{e.country}}
+            </h3>
+            <h3>
+                <span class="fw-bold">Sito Web:</span> 
+                <br>
+                <a class="text-decoration-none text-dark" href="{{e.url}}">{{e.url}}</a> 
+            </h3>
+            <h3>
+                <span class="fw-bold">Trust Score:</span>  {{e.trust_score_rank}}</h3>
+            <h3>
+                <span class="fw-bold">Volume Trade 24H:</span>  
+                {{e.trade_volume_24h_btc}}
+            </h3>
+        </div>
+    </div>
+</div>

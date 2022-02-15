@@ -1,0 +1,30 @@
+<h2 *ngIf="loading">LOADING...</h2>
+<div class="container text-center my-5">
+    <div class="row">
+        <div class="col-12">
+            <h2>Cerca Valore Crypto per Data</h2>
+            <label for="searchName">Inserisci il nome della Crypto</label>
+            <input type="text"class="form-control w-75 mx-auto" #searchName id="searchName" placeholder="Es.Bitcoin">
+            <label for="searchDate">Inserisci la Data</label>
+            <input type="text" class="form-control w-75 mx-auto" #searchDate id="searchDate" placeholder="Es.30-12-2017">
+            <button class="btn btn-success my-3" (click)="getCryptoDate(searchName.value, searchDate.value)">Cerca</button>
+            <ul *ngIf="crypto !=null" class="list-group my-3">
+                <li class="list-group-item">
+                    <p>
+                        Name: <span class="fw-bold">{{crypto.name}}</span>
+                    </p>
+                    <p>
+                        Prezzo in data <span class="fw-bold">{{searchDate.value}}:</span> 
+                        <br>
+                        <span class="fw-bold">
+                            <br>{{crypto.market_data.current_price.usd | currency}}
+                        </span>
+                    </p>
+                   <br>
+                  
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

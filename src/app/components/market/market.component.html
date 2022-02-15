@@ -1,0 +1,16 @@
+<h2 class="text-center my-5">MarketCap e info utili sulle Crypto del momento</h2>
+<h2 *ngIf="loading">LOADING...</h2>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div *ngFor="let c of crypto" class="card-custom col-12 text-center m-2 w-75">
+            <img class="img-fluid w-25 p-2" src="{{c.image}}" alt="">
+            <h2>{{c.name}}</h2>
+            <h3><span class="fw-bold">Prezzo Attuale:</span> <br>  {{c.current_price | currency}}</h3>
+            <h3><span class="fw-bold">MarketCap:</span>  {{c.market_cap | currency}}</h3>
+            <h3><span class="fw-bold">Volume Totale:</span>  {{c.total_volume | currency}}</h3>
+            <h3><span class="fw-bold">High Price 24H:</span>  {{c.high_24h | currency}}</h3>
+            <h3><span class="fw-bold">Low Price 24H:</span>  {{c.low_24h | currency}}</h3>
+            <h3><span class="fw-bold">Supply Totale:</span>  {{c.total_supply}}</h3>
+        </div>
+    </div>
+</div>

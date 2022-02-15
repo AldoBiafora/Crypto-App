@@ -1,0 +1,12 @@
+<h2 class="text-center my-5">Le Migliori CryptoValute Attualmente</h2>
+<h2 *ngIf="loading">LOADING...</h2>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div *ngFor="let c of crypto" class="card-custom col-12 text-center m-2 w-md-75">
+            <img class="img-fluid w-50 p-2" src="{{c.image}}" alt="">
+            <h2>{{c.name}}</h2>
+            <h3><span class="fw-bold">Prezzo Attuale:</span> <br>  {{c.current_price | currency}}</h3>
+            <h3><span class="fw-bold">Volume Totale:</span>  {{c.total_volume | currency}}</h3>
+        </div>
+    </div>
+</div>
