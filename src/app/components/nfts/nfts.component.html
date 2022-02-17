@@ -1,0 +1,11 @@
+<h2 class="text-center my-5">Tutte le Collezioni di NFTS</h2>
+<h2 *ngIf="loading">LOADING...</h2>
+<div class="container">
+    <div *ngIf="nft" class="row justify-content-center align-items-center ">
+        <div *ngFor="let n of nft.nfts" class="card-custom col-12 p-5 text-center my-3">
+            Nome Collezione: <span class="fw-bold fs-3">{{n.name}}</span>
+            <br> 
+            Simbolo:<span *ngIf="n.id" class="fw-bold">{{n.id}}</span> <br>  
+        </div>
+    </div>
+</div>

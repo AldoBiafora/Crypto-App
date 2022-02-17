@@ -3,13 +3,18 @@
     <div class="row">
         <div class="col-12">
             <h2>Top 7 Crypto in Tendenza</h2>
-            <ul class="list-group my-3">
-                <li *ngFor="let cry of crypto" class="list-group-item">
-                    <p *ngFor="let coin of cry.coins.item | keyvalue">
-                        {{coin}}
-                    </p>
-                    <!-- <p>Name: <span class="fw-bold">{{c.coins['item'].name}}</span></p>-->
-                 </li>
+            <ul *ngIf="trending && trending.coins" class="list-group my-3 mx-auto">
+                <li *ngFor="let coin of trending.coins" class="list-group-item item my-2 w-75 mx-auto">
+                    <img class="w-25 img-fluid" src="{{coin.item.thumb}}" alt="">
+                    <br>
+                    Nome: <span class="fw-bold">{{coin.item.name}}</span>
+                    <br> 
+                    Simbolo: <span class="fw-bold">{{coin.item.symbol}}</span> 
+                    <br>
+                    MarketCap Rank: <span class="fw-bold">{{coin.item.market_cap_rank}}</span> 
+                    <br>
+                    Prezzo in BTC: <span class="fw-bold">{{coin.item.price_btc}}</span> 
+                </li>
             </ul>
         </div>
     </div>

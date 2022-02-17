@@ -10,13 +10,13 @@
             <button class="btn btn-success my-3" (click)="getCryptoDate(searchName.value, searchDate.value)">Cerca</button>
             <ul *ngIf="crypto !=null" class="list-group my-3">
                 <li class="list-group-item">
-                    <p>
+                    <p class="lead">
                         Name: <span class="fw-bold">{{crypto.name}}</span>
                     </p>
-                    <p>
-                        Prezzo in data <span class="fw-bold">{{searchDate.value}}:</span> 
+                    <p class="lead">
+                        Prezzo in data: <span class="fw-bold">{{searchDate.value}}</span> 
                         <br>
-                        <span class="fw-bold">
+                        <span class="fw-bold fs-4">
                             <br>{{crypto.market_data.current_price.usd | currency}}
                         </span>
                     </p>

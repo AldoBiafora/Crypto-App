@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CryptoService } from 'src/app/service/crypto.service';
-import { Crypto } from 'src/app/models/crypto.model';
+import { Crypto, Search } from 'src/app/models/crypto.model';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +11,7 @@ export class SearchComponent implements OnInit {
 
   loading: boolean = false;
   crypto: Crypto[] = [];
-  cryptoId!: Crypto;
+  cryptoId!: Search;
 
 
   constructor(private cryptoService: CryptoService) { }

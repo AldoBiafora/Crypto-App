@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CryptoService } from 'src/app/service/crypto.service';
-import { Crypto } from 'src/app/models/crypto.model';
+import { Crypto, Trending } from 'src/app/models/crypto.model';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { Crypto } from 'src/app/models/crypto.model';
 export class TrendingComponent implements OnInit {
 
   loading: boolean = false;
-  crypto: Crypto[] = [];
+  trending!: Trending;
 
   constructor(private cryptoService: CryptoService) { }
 
@@ -22,7 +22,7 @@ export class TrendingComponent implements OnInit {
   getTrending(): void {
     this.loading = true;
     this.cryptoService.getTrending().subscribe(res => {
-      this.crypto = res;
+      this.trending = res;
       this.loading = false;
     });
   }

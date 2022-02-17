@@ -12,7 +12,6 @@ export interface Crypto {
     market_cap_rank: number;
     market_data: MarketData;
     description: Description;
-    coins: Coins;
 }
 
 export interface MarketData {
@@ -27,15 +26,43 @@ export interface Description {
     en: string;
 }
 
-export interface Coins {
+export interface Trending {
+    coins: Coin[];
+    exchanges: any[];
+}
+
+export interface Coin {
     item: Item;
 }
 
-export interface Item {
-    id: number;
+export interface Moneta {
+    id: string;
     symbol: string;
     name: string;
     market_cap_rank: number;
     thumb: string;
     price_btc: number;
+}
+
+export interface Item {
+    id: string;
+    symbol: string;
+    name: string;
+    market_cap_rank: number;
+    thumb: string;
+    price_btc: number;
+}
+
+export interface Search {
+    coins: Moneta[];
+    icos: any[];
+    categories: any[];
+    nfts: Nfts[];
+}
+
+export interface Nfts {
+    id: string;
+    name: string;
+    symbol: string;
+    thumb: string;
 }

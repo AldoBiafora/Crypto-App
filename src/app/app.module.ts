@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ExchangesComponent } from './components/exchanges/exchanges.component';
 import { DateSearchComponent } from './components/date-search/date-search.component';
 import { TrendingComponent } from './components/trending/trending.component';
+import { NftsComponent } from './components/nfts/nfts.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { TrendingComponent } from './components/trending/trending.component';
     MarketComponent,
     ExchangesComponent,
     DateSearchComponent,
-    TrendingComponent
+    TrendingComponent,
+    NftsComponent
   ],
   imports: [
     BrowserModule,
