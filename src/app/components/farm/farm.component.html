@@ -1,0 +1,33 @@
+
+<form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <h2 class="text-center p-3">Inserisci un nuovo Animale</h2>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-6 my-2">
+                <mat-form-field>
+                    <input matInput formControlName="type" placeholder="es. Cavallo">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="color" placeholder="es. Marrone">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="age" placeholder="es. 3">
+                </mat-form-field>
+                <button class="mx-5" mat-raised-button color="primary" type="submit" [disabled]="!reportForm.valid">Esporta</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-10">
+            <ul *ngIf="farm != null" class="list-group my-3">
+                <li *ngFor="let f of farm" class="list-group-item my-2 item text-center">
+                    {{f.Type}} - {{f.Color}} - {{f.Age}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

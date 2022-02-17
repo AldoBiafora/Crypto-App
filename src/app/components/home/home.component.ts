@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimalDTO } from 'src/app/models/farm.model';
+import { CryptoService } from 'src/app/service/crypto.service';
+import { FarmService } from 'src/app/service/farm.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  test: any;
+  constructor(private cryptoService: CryptoService, private farmService: FarmService) { }
 
   ngOnInit(): void {
+  }
+
+  getTest(): void {
+    this.cryptoService.getTest().subscribe(res => {
+      this.test = res;
+    });    
   }
 
 }

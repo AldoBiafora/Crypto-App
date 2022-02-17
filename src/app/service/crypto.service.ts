@@ -40,4 +40,9 @@ export class CryptoService {
   getNfts(): Observable<Search> {
     return this.http.get<Search>('https://api.coingecko.com/api/v3/search?query=')
   }
+
+  getTest(): Observable<any> {
+    return this.http.get<any>('/api/data/getVersion')
+  }
+
 }

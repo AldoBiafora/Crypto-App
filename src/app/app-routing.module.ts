@@ -8,6 +8,7 @@ import { SearchComponent } from './components/search/search.component';
 import { DateSearchComponent } from './components/date-search/date-search.component';
 import { TrendingComponent } from './components/trending/trending.component';
 import { NftsComponent } from './components/nfts/nfts.component';
+import { FarmComponent } from './components/farm/farm.component';
 
 const routes: Routes = [
   { 
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'nft',
     component: NftsComponent
+  },
+  {
+    path: 'farm',
+    component: FarmComponent
   }
 ];
 
