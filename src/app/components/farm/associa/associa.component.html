@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center my-5">
+            <button [routerLink]="['/consulta']" mat-raised-button color="primary">Consulta</button>
+            <button [routerLink]="['/associa']" mat-raised-button color="primary" class="mx-3">Associa</button>
+            <button [routerLink]="['/aggiungi']" mat-raised-button color="primary">Aggiungi</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center align-items-start">
+        <h2 class="text-center my-5">Le Associazioni</h2>
+        <div class="col-10 col-md-4">
+            <h2 class="text-center">Fattorie - Contadini</h2>
+            <ul *ngIf="farmerFactory != null" class="list-group my-3">
+                <li *ngFor="let f of farmerFactory" class="list-group-item my-2 item text-center">
+                    Nome Contadino: <span class="fw-bold">{{f.Farmer_Name}}</span> <br>
+                    Nome Fattoria: <span class="fw-bold">{{f.Factory_Name}}</span> 
+                </li>
+            </ul>
+        </div>
+        <div class="col-10 col-md-4">
+            <h2 class="text-center">Animali - Fattorie</h2>   
+            <ul *ngIf="animalFactory != null" class="list-group my-3">
+                <li *ngFor="let a of animalFactory" class="list-group-item my-2 item text-center">
+                 Nome Fattoria: <span class="fw-bold">{{a.Factory_Name}}</span> <br>
+                 nome Animale: <span class="fw-bold">{{a.Animal_Type}}</span> 
+                </li>
+            </ul>    
+        </div>
+    </div>
+</div>

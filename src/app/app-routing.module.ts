@@ -9,6 +9,9 @@ import { DateSearchComponent } from './components/date-search/date-search.compon
 import { TrendingComponent } from './components/trending/trending.component';
 import { NftsComponent } from './components/nfts/nfts.component';
 import { FarmComponent } from './components/farm/farm.component';
+import { ConsultaComponent } from './components/farm/consulta/consulta.component';
+import { AssociaComponent } from './components/farm/associa/associa.component';
+import { AggiungiComponent } from './components/farm/aggiungi/aggiungi.component';
 
 const routes: Routes = [
   { 
@@ -46,6 +49,18 @@ const routes: Routes = [
   {
     path: 'farm',
     component: FarmComponent
+  },
+  {
+    path: 'consulta',
+    component: ConsultaComponent
+  },
+  {
+    path: 'associa',
+    component: AssociaComponent
+  },
+  {
+    path: 'aggiungi',
+    component: AggiungiComponent
   }
 ];
 

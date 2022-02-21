@@ -16,6 +16,9 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { NftsComponent } from './components/nfts/nfts.component';
 import { FarmComponent } from './components/farm/farm.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AggiungiComponent } from './components/farm/aggiungi/aggiungi.component';
+import { ConsultaComponent } from './components/farm/consulta/consulta.component';
+import { AssociaComponent } from './components/farm/associa/associa.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DateSearchComponent,
     TrendingComponent,
     NftsComponent,
-    FarmComponent
+    FarmComponent,
+    AggiungiComponent,
+    ConsultaComponent,
+    AssociaComponent
   ],
   imports: [
     BrowserModule,

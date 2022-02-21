@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center my-5">
+            <button [routerLink]="['/consulta']" mat-raised-button color="primary">Consulta</button>
+            <button [routerLink]="['/associa']" mat-raised-button color="primary" class="mx-3">Associa</button>
+            <button [routerLink]="['/aggiungi']" mat-raised-button color="primary">Aggiungi</button>
+        </div>
+    </div>
+</div>
+
+<form [formGroup]="animalForm" (ngSubmit)="onSubmitAnimal()">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-10 col-md-6 my-5">
+                <h2 class="text-center">Inserisci un nuovo Animale</h2>
+                <mat-form-field>
+                    <input matInput formControlName="type" placeholder="es. Cavallo">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput formControlName="color" placeholder="es. Marrone">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput formControlName="age" placeholder="es. 3">
+                </mat-form-field>
+                <button class="mx-5" mat-raised-button color="primary" type="submit" [disabled]="!animalForm.valid">Aggiungi</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form [formGroup]="farmerForm" (ngSubmit)="onSubmitFarmer()">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-10 col-md-6 my-5">
+                <h2 class="text-center">Inserisci un nuovo Contadino</h2>
+                <mat-form-field>
+                    <input matInput formControlName="name" placeholder="es. Aldo">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput formControlName="age" placeholder="es. 27">
+                </mat-form-field>
+                <button class="mx-5" mat-raised-button color="primary" type="submit" [disabled]="!farmerForm.valid">Aggiungi</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form [formGroup]="factoryForm" (ngSubmit)="onSubmitFactory()">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-10 col-md-6 my-5">
+                <h2 class="text-center">Inserisci una nuova Fattoria</h2>
+                <mat-form-field>
+                    <input matInput formControlName="name" placeholder="es. Barilla">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput formControlName="city" placeholder="es. Pavia">
+                </mat-form-field>
+                <button class="mx-5" mat-raised-button color="primary" type="submit" [disabled]="!factoryForm.valid">Aggiungi</button>
+            </div>
+        </div>
+    </div>
+</form>

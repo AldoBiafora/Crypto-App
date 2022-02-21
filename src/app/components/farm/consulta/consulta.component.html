@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center my-5">
+            <button [routerLink]="['/consulta']" mat-raised-button color="primary">Consulta</button>
+            <button [routerLink]="['/associa']" mat-raised-button color="primary" class="mx-3">Associa</button>
+            <button [routerLink]="['/aggiungi']" mat-raised-button color="primary">Aggiungi</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center align-items-start">
+        <h2 class="text-center my-5">Consulta i nostri Dati</h2>
+        <div class="col-10 col-md-4">
+            <h2 class="text-center">Animali</h2>
+            <ul *ngIf="animal != null" class="list-group my-3">
+                <li *ngFor="let a of animal" class="list-group-item my-2 item text-center">
+                    Tipo: <span class="fw-bold">{{a.Type}}</span> <br>
+                    Colore: <span class="fw-bold">{{a.Color}}</span> <br>
+                    Età: <span class="fw-bold">{{a.Age}}</span> 
+                </li>
+            </ul>
+        </div>
+        <div class="col-10 col-md-4">
+            <h2 class="text-center">Contadini</h2>
+            <ul *ngIf="farmer != null" class="list-group my-3">
+                <li *ngFor="let f of farmer" class="list-group-item my-2 item text-center">
+                 Nome: <span class="fw-bold">{{f.name}}</span> <br>
+                 Età: <span class="fw-bold">{{f.age}}</span> 
+                </li>
+            </ul>
+        </div>
+        <div class="col-10 col-md-4">
+            <h2 class="text-center">Fattorie</h2>
+            <ul *ngIf="farmer != null" class="list-group my-3">
+                <li *ngFor="let f of factory" class="list-group-item my-2 item text-center">
+                 Nome: <span class="fw-bold">{{f.name}}</span> <br>
+                 Città: <span class="fw-bold">{{f.city}}</span> 
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
