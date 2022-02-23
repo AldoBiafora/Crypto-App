@@ -51,7 +51,7 @@ export class AggiungiComponent implements OnInit {
   onSubmitFarmer(): void {
     let formData = this.farmerForm.value;
     let returnData: FarmerDTO =  {
-      Id: 0,
+      id: 0,
       name: formData.name,
       age: formData.age
     }

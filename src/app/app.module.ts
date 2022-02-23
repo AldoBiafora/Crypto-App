@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AggiungiComponent } from './components/farm/aggiungi/aggiungi.component';
 import { ConsultaComponent } from './components/farm/consulta/consulta.component';
 import { AssociaComponent } from './components/farm/associa/associa.component';
+import { NavigationComponent } from './components/farm/navigation/navigation.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AssociaComponent } from './components/farm/associa/associa.component';
     FarmComponent,
     AggiungiComponent,
     ConsultaComponent,
-    AssociaComponent
+    AssociaComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,27 @@
+<app-navigation></app-navigation>
+
 <div class="container">
     <div class="row">
-        <div class="col-12 text-center my-5">
-            <button [routerLink]="['/consulta']" mat-raised-button color="primary">Consulta</button>
-            <button [routerLink]="['/associa']" mat-raised-button color="primary" class="mx-3">Associa</button>
-            <button [routerLink]="['/aggiungi']" mat-raised-button color="primary">Aggiungi</button>
+        <div class="col-12 text-center">
+            <label for="search-box" class="m-4 fw-bold fs-3"> <h2>Ricerca Fattorie NON Associate ad un Contadino</h2> </label>
+                <mat-form-field appearance="fill">
+                    <mat-label>Contadini</mat-label>
+                    <mat-select #searchFarmer>
+                        <mat-option *ngFor="let c of contadinoDTO" [value]="c.Farmer_Id">
+                        {{c.Farmer_Name}} 
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            <!-- <mat-form-field>
+                <input matInput formControlName="searchFarmer" type="number" class="mx-auto" #searchFarmer id="searchFarmer" placeholder="Es. id: 1">
+            </mat-form-field>--> 
+            <br>
+            <button mat-raised-button color="primary" class="my-3" (click)="searchFarmerAssociate(searchFarmer.value)">Cerca</button>
+            <ul *ngIf="factory != null" class="list-group my-3">
+                <li *ngFor="let s of factory" class="list-group-item my-2 item text-center">
+                    Nome Fattoria: <span class="fw-bold">{{s.Factory_Name}}</span>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -25,7 +43,7 @@
             <ul *ngIf="animalFactory != null" class="list-group my-3">
                 <li *ngFor="let a of animalFactory" class="list-group-item my-2 item text-center">
                  Nome Fattoria: <span class="fw-bold">{{a.Factory_Name}}</span> <br>
-                 nome Animale: <span class="fw-bold">{{a.Animal_Type}}</span> 
+                 Nome Animale: <span class="fw-bold">{{a.Animal_Type}}</span> 
                 </li>
             </ul>    
         </div>

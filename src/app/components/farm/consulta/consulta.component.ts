@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmService } from 'src/app/service/farm.service';
-import { AnimalDTO, FactoryDTO, FarmerDTO } from 'src/app/models/farm.model';
+import { AnimalDTO, ContadinoDTO, FactoryDTO, FarmerDTO } from 'src/app/models/farm.model';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { AnimalDTO, FactoryDTO, FarmerDTO } from 'src/app/models/farm.model';
 export class ConsultaComponent implements OnInit {
 
   animal: AnimalDTO[] = [];
-  farmer: FarmerDTO[] = [];
+  farmer: ContadinoDTO[] = [];
   factory: FactoryDTO[] = [];
 
   constructor(private farmService: FarmService) { }

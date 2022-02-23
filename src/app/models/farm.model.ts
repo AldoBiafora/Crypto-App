@@ -6,9 +6,15 @@ export interface AnimalDTO {
 }
 
 export interface FarmerDTO {
-    Id: number;
+    id: number;
     name: string;
     age: number;
+}
+
+export interface ContadinoDTO {
+    Farmer_Id: number;
+    Farmer_Name: string;
+    Farmer_Age: number;
 }
 
 export interface FactoryDTO {
@@ -25,6 +31,11 @@ export interface FarmerFactoryDTO {
 export interface FactoryAnimalDTO {
     Factory_Name: string;
     Animal_Type: string;
+}
+
+export interface FarmerAssociateDTO {
+    Factory_Name: string;
+    Factory_Id: string;
 }
 
 export interface ResponseModel<T> {

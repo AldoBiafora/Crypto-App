@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AnimalDTO, FactoryAnimalDTO, FactoryDTO, FarmerDTO, FarmerFactoryDTO, ResponseModel } from '../models/farm.model';
+import { AnimalDTO, FactoryAnimalDTO, FactoryDTO, FarmerDTO, FarmerFactoryDTO, ResponseModel, FarmerAssociateDTO, ContadinoDTO } from '../models/farm.model';
 import { map, Observable } from 'rxjs';
 
 
@@ -41,9 +41,9 @@ export class FarmService {
     ) 
   }
 
-  getFarmer(): Observable<FarmerDTO[]> {
-    return this.http.get<ResponseModel<FarmerDTO[]>>('/api/data/getFarmer').pipe(
-      map((response: ResponseModel<FarmerDTO[]>) => { return response.data})
+  getFarmer(): Observable<ContadinoDTO[]> {
+    return this.http.get<ResponseModel<ContadinoDTO[]>>('/api/data/getFarmer').pipe(
+      map((response: ResponseModel<ContadinoDTO[]>) => { return response.data})
     ) 
   }
 
@@ -65,5 +65,10 @@ export class FarmService {
     ) 
   }
   
+  searchFarmerAssociate(id: number): Observable<FarmerAssociateDTO[]> {
+    return this.http.get<ResponseModel<FarmerAssociateDTO[]>>('/api/data/searchFarmer/'+ id).pipe(
+      map((response: ResponseModel<FarmerAssociateDTO[]>) => { return response.data})
+    )
+  }
 }
 

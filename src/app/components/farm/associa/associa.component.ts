@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FactoryAnimalDTO, FarmerFactoryDTO } from 'src/app/models/farm.model';
+import { FactoryAnimalDTO, FactoryDTO, FarmerFactoryDTO, FarmerAssociateDTO, FarmerDTO, ContadinoDTO } from 'src/app/models/farm.model';
 import { FarmService } from 'src/app/service/farm.service';
+
 
 @Component({
   selector: 'app-associa',
@@ -11,12 +12,16 @@ export class AssociaComponent implements OnInit {
 
   farmerFactory: FarmerFactoryDTO[] = [];
   animalFactory: FactoryAnimalDTO[] = [];
+  factory: FarmerAssociateDTO[] = [];
+  contadinoDTO: ContadinoDTO[] = [];
+  farmer: FarmerDTO[] = [];
 
   constructor(private farmService: FarmService) { }
 
   ngOnInit(): void {
     this.getFarmerFactory();
     this.getFactoryAnimal();
+    this.getFarmer();
   }
 
   getFarmerFactory(): void {
@@ -28,6 +33,18 @@ export class AssociaComponent implements OnInit {
   getFactoryAnimal(): void {
     this.farmService.getFactoryAnimal().subscribe(res => {
       this.animalFactory = res;
+    });
+  }
+
+  searchFarmerAssociate(id: number): void {
+    this.farmService.searchFarmerAssociate(id).subscribe(res => {
+      this.factory = res;
+    });
+  }
+
+  getFarmer(): void {
+    this.farmService.getFarmer().subscribe(res => {
+      this.contadinoDTO = res;
     });
   }
 }

@@ -1,12 +1,4 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12 text-center my-5">
-            <button [routerLink]="['/consulta']" mat-raised-button color="primary">Consulta</button>
-            <button [routerLink]="['/associa']" mat-raised-button color="primary" class="mx-3">Associa</button>
-            <button [routerLink]="['/aggiungi']" mat-raised-button color="primary">Aggiungi</button>
-        </div>
-    </div>
-</div>
+<app-navigation></app-navigation>
 
 <div class="container">
     <div class="row justify-content-center align-items-start">
@@ -25,8 +17,8 @@
             <h2 class="text-center">Contadini</h2>
             <ul *ngIf="farmer != null" class="list-group my-3">
                 <li *ngFor="let f of farmer" class="list-group-item my-2 item text-center">
-                 Nome: <span class="fw-bold">{{f.name}}</span> <br>
-                 Età: <span class="fw-bold">{{f.age}}</span> 
+                 Nome: <span class="fw-bold">{{f.Farmer_Name}}</span> <br>
+                 Età: <span class="fw-bold">{{f.Farmer_Age}}</span> 
                 </li>
             </ul>
         </div>
